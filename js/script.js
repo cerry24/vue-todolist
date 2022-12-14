@@ -37,12 +37,19 @@ createApp ({
         removeItem(itemToDelete) {
             const itemIndex = this.todoList.indexOf(itemToDelete);
 
-            this.todoList.splice(itemIndex, 1);
+            if ( itemIndex > -1 ) {
+                this.todoList.splice(itemIndex, 1);
+            }
         },
 
         addItem(item) {
-            this.todoList.push({text: item, done:false});
-            this.clearInput();
+            item = item.loLowerCase();
+
+            if ( (item != '') && (!this.todoList.includes(item)) ) {
+                this.todoList.push({text: item, done:false});
+
+                this.clearInput();
+            }
         },
 
         clearInput() {
