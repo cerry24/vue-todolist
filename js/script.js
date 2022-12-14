@@ -47,6 +47,10 @@ createApp ({
 
         clearInput() {
             this.newItem = '';
+        },
+
+        invertDone(doneElement) {
+            doneElement.done = !doneElement.done;
         }
     }
 }).mount('#app');
