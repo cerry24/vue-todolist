@@ -30,5 +30,13 @@ createApp ({
                 }
             ]
         }
+    },
+
+    methods: {
+        removeItem(itemToDelete){
+            const itemIndex = this.todoList.indexOf(itemToDelete);
+
+            this.todoList.splice(itemIndex, 1);
+        }
     }
 }).mount('#app');

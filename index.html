@@ -39,7 +39,7 @@
                                 <li v-for="element in todoList" 
                                 :class=" (element.done === true) ? 'list-group-item d-flex justify-content-between align-items-start text-decoration-line-through' : 'list-group-item d-flex justify-content-between align-items-start'">
                                     <div class="ms-2 me-auto p-2 fw-bold text">{{ element.text }}</div>
-                                    <span class="badge bg-primary rounded-pill m-2"><i class="fa-solid fa-xmark"></i></span>
+                                    <span class="badge bg-primary rounded-pill m-2" @click="removeItem(element)"><i class="fa-solid fa-xmark"></i></span>
                                 </li>
                             </ul>
                         </div>
