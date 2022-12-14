@@ -21,8 +21,8 @@
                         <div class="row d-flex justify-content-center">
                             <div class="col-7">
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Insert new 'todo'">
-                                    <button class="btn btn-outline-primary" type="button">Add</button>
+                                    <input type="text" class="form-control" placeholder="Insert new 'todo'" v-model="newItem" @keyup.enter="addItem(newItem)">
+                                    <button class="btn btn-outline-primary" type="button" @click="addItem(newItem)">Add</button>
                                 </div>
                             </div>
                         </div>

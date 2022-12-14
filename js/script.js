@@ -28,15 +28,25 @@ createApp ({
                     text: 'chiamare meccanico',
                     done: true,
                 }
-            ]
+            ],
+            newItem: ''
         }
     },
 
     methods: {
-        removeItem(itemToDelete){
+        removeItem(itemToDelete) {
             const itemIndex = this.todoList.indexOf(itemToDelete);
 
             this.todoList.splice(itemIndex, 1);
+        },
+
+        addItem(item) {
+            this.todoList.push({text: item, done:false});
+            this.clearInput();
+        },
+
+        clearInput() {
+            this.newItem = '';
         }
     }
 }).mount('#app');
